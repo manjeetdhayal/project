@@ -10,18 +10,22 @@ const useStyles = makeStyles((theme) => ({
         flexDirection: "column",
         width: "95vw", 
         height: "400px",
-        backgroundColor: "red",
-        margin: "0 auto"
+        backgroundColor: "white",
+        margin: "20px auto"
 
     },
 
     header: {
-        display: 'flex'
+        display: 'flex',
+        justifyContent: 'space-between',
+        padding: '30px 15px'
     },
 
     datePickerContainer: {
         display: "flex",
-        marginLeft: "0"
+        marginLeft: "0",
+        marginTop: '10px',
+        padding:'10px',
     },
     container: {
         display: 'flex',
@@ -34,8 +38,11 @@ const useStyles = makeStyles((theme) => ({
     },
     mainButton: {
         display: 'flex',
-        padding: '5px',
+        padding: '15px',
         marginTop: '20px'
+    },
+    outlineButton: {
+        color:'#4698ce',
     }
 }));
 
@@ -43,15 +50,23 @@ export default function DatePickers() {
   const classes = useStyles();
 
   return (
+
+    <div>
       <div className = {classes.mainContainer}>
           <div className = {classes.header}>
               <div>
-          <Button variant="outlined" color="primary">
+                  RI Tracker
+              </div>
+              <div>
+          <Button variant="outlined" className = {classes.outlineButton} >
         AWS
       </Button>
-      <Button variant="outlined" color="primary">
+      <Button variant="outlined" className = {classes.outlineButton} >
         Azure
       </Button>
+      </div>
+      <div>
+          GUIDED TOUR
       </div>
           </div>
           <div className = {classes.datePickerContainer}>
@@ -83,20 +98,35 @@ export default function DatePickers() {
 
   <div className = {classes.mainButton}>
 
-  <Button variant="contained" color = "primary" style = {
+  <Button variant="contained"  style = {
       {
          
-          marginRight: '15px'
+          marginRight: '15px',
+          backgroundColor: '#4698ce',
+          color: 'white'
           
       }
   } >
         Apply
       </Button>
-      <Button variant="contained" color="primary">
+      <Button variant="contained" style = {
+          {
+              backgroundColor: '#4698ce',
+              color: 'white'
+          }
+      }>
         Download
       </Button>
       
       </div>
+    
+      
+  </div>
+
+  <div className = {classes.mainContainer}>
+      hello
+  </div>
+
   </div>
   );
 }
