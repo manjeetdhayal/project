@@ -2,6 +2,7 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
+import BasicTable from './tableSearch.tsx';
 
 const useStyles = makeStyles((theme) => ({
 
@@ -9,9 +10,10 @@ const useStyles = makeStyles((theme) => ({
         display: "flex",
         flexDirection: "column",
         width: "95vw", 
-        height: "400px",
+        height: "fit-content",
         backgroundColor: "white",
-        margin: "20px auto"
+        margin: "20px auto",
+        padding: '10px',
 
     },
 
@@ -42,8 +44,10 @@ const useStyles = makeStyles((theme) => ({
         marginTop: '20px'
     },
     outlineButton: {
-        color:'#4698ce',
-    }
+        color:'#4698ce',        
+    },
+    
+
 }));
 
 export default function DatePickers() {
@@ -52,7 +56,7 @@ export default function DatePickers() {
   return (
 
     <div>
-      <div className = {classes.mainContainer}>
+      <div className = {classes.mainContainer} >
           <div className = {classes.header}>
               <div>
                   RI Tracker
@@ -124,7 +128,7 @@ export default function DatePickers() {
   </div>
 
   <div className = {classes.mainContainer}>
-      hello
+      <BasicTable/>
   </div>
 
   </div>
